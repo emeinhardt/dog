@@ -36,10 +36,10 @@ datalog = def { quoteExp = qqDatalog }
 -- | Parsing the Datalog Schema
 def :: QuasiQuoter
 def = QuasiQuoter
-    { quoteExp  = fail "quotExp: not implemented"
-    , quotePat  = fail "quotPat: not implemented"
-    , quoteDec  = fail "quotDec: not implemented"
-    , quoteType = fail "quotType: not implemented"
+    { quoteExp  = const $ fail "quotExp: not implemented"
+    , quotePat  = const $ fail "quotPat: not implemented"
+    , quoteDec  = const $ fail "quotDec: not implemented"
+    , quoteType = const $ fail "quotType: not implemented"
     }
 
 qqDatalog
