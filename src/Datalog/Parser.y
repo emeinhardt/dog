@@ -62,7 +62,7 @@ Statement :: { Statement }
   | Literal '?'  { Query $1 }
 
 Clause :: { Clause }
-  : Literal ':-' Body { Clause $1 $ Just (Body (reverse $3)) }
+  : Literal ':-' Body { Clause $1 $ Just (Body $3) }
   | Literal { Clause $1 Nothing }
 
 Body :: { [Literal] }
